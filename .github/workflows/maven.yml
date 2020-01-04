@@ -23,10 +23,14 @@ jobs:
   
   Tester:
     name: II - Tester
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1 
   
   Deployer:
     name: III - Déployer
     runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
 
 
