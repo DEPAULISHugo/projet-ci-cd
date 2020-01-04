@@ -13,7 +13,8 @@ jobs:
     name: I - Construire
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - name: Checks-out the repository under $GITHUB_WORKSPACE
+      uses: actions/checkout@v1
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
       with:
