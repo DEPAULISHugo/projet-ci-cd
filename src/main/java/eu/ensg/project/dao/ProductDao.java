@@ -6,7 +6,7 @@ import eu.ensg.project.model.Product;
 
 
 /**
- * Interface that defines CRUD operations on objects of type Product
+ * Interface that defines CRUD operations on objects of Product type
  * 
  * @author Hugo De Paulis
  *

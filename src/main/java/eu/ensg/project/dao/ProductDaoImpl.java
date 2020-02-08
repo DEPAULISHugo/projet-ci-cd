@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import eu.ensg.project.model.Product;
 
 /**
- * Class implementing the ProductDao interface to perform product persistence
- * (possess a static field "products" to emulate a database
+ * Class implementing the ProductDao interface to perform Product persistence
+ * (possess a static field "products" to emulate a database)
  * 
  * @author Hugo De Paulis
  *
