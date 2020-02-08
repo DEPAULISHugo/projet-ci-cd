@@ -7,6 +7,13 @@ import org.springframework.stereotype.Repository;
 
 import eu.ensg.project.model.Product;
 
+/**
+ * Class implementing the ProductDao interface to perform product persistence
+ * (possess a static field "products" to emulate a database
+ * 
+ * @author Hugo De Paulis
+ *
+ */
 @Repository
 public class ProductDaoImpl implements ProductDao {
 	
@@ -16,12 +23,18 @@ public class ProductDaoImpl implements ProductDao {
         products.add(new Product(2, new String("Aspirateur Robot"), 500)); 
         products.add(new Product(3, new String("Table de Ping Pong"), 750));
     }
-
+    
+    /**
+     * {@inheritDoc}
+     */
 	@Override
 	public List<Product> findAll() {
 		return products;
 	}
 
+    /**
+     * {@inheritDoc}
+     */
 	@Override
 	public Product findById(int id) {
         for (Product product : products) {  
@@ -32,6 +45,9 @@ public class ProductDaoImpl implements ProductDao {
         return null;
 	}
 
+    /**
+     * {@inheritDoc}
+     */
 	@Override
 	public Product save(Product product) {
         products.add(product);
