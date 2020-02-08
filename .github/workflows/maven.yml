@@ -17,20 +17,37 @@ jobs:
       uses: actions/checkout@v1
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
-      with:
-        java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
   
-  Tester:
-    name: II - Tester
+  Tester_J8:
+    needs: [Construire]
+    name: II - Tester sur Java 8
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
     - name: Test with Maven
-      run: mvn -B test --file pom.xml 
+      run: mvn -B test --file pom.xml
   
+  Tester_J11:
+    needs: [Construire]
+    name: II - Tester sur Java 11
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK 11.0.6
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Test with Maven
+      run: mvn -B test --file pom.xml
+
   Deployer:
+    needs: [Tester_J8, Tester_J11]
     name: III - Déployer
     runs-on: ubuntu-latest
     steps:
