@@ -6,7 +6,7 @@ package eu.ensg.project.model;
  *
  */
 public class Product {
-    private int id;
+    private int;
     private String nom;
     private int prix;
     
