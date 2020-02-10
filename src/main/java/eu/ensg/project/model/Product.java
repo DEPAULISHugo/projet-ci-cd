@@ -6,7 +6,7 @@ package eu.ensg.project.model;
  *
  */
 public class Product {
-    private int;
+    private int id;
     private String nom;
     private int prix;
     
@@ -92,7 +92,7 @@ public class Product {
      */
     public String toString(){  
         return "Product{"+
-        "id=" + id + 
+        "id=" + (id+1) + 
         ", nom='"+ nom + '\'' + 
         ", prix=" + prix+ '}';
     }
