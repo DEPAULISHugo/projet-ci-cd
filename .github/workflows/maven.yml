@@ -50,5 +50,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+      with:
+        java-version: 1.8
+    #- name: Deploy Javadoc
+    #  run: mvn -B javadoc:javadoc --file pom.xml
 
 
