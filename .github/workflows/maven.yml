@@ -16,7 +16,7 @@ jobs:
     - name: Checks-out the repository under $GITHUB_WORKSPACE
       uses: actions/checkout@v1
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -B compile --file pom.xml
   
   Tester_J8:
     needs: [Construire]
