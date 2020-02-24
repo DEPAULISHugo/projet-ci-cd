@@ -20,7 +20,7 @@ Afin de pouvoir mettre en pratique l'intégration, le code a été commenté dan
 
 Pour mettre en place mon pipeline d'intégration continue, j'ai utilisé l'outil directement fourni par Github, c'est-à-dire Github Actions. En effet, après avoir testé Travic CI et Circle CI, Github Actions m'a semblé être la solution la plus simple à mettre en oeuvre. Le fichier de configuration du pipeline se trouve [ici](.github/workflows/maven.yml).
 
-Ce pipeline est exécuté à chaque Push et Pull request effectué sur master. Il se divise en trois étapes majeures : Construire, Tests et Déployer. Ces étapes s'effectuent l'une après l'autre. Cependant, comme les étapes sont simultanées par défaut sur Github Actions, il est nécessaire d'utiliser le mot clé "needs" en précisant l'étape précédente pour obtenir ce résultat. En outre, si l'une des étapes échoue, le processus s'arrête immédiatement. S'il agissait d'une Pull request, un message d'erreur apparaît, empéchant de poursuivre la Pull request. 
+Ce pipeline est exécuté à chaque Push et Pull request effectué sur master. Il se divise en trois étapes majeures : Construire, Tests et Déployer. Ces étapes s'effectuent l'une après l'autre. Cependant, comme les étapes sont simultanées par défaut sur Github Actions, il est nécessaire d'utiliser le mot clé "needs" en précisant l'étape précédente pour obtenir ce résultat. En outre, si l'une des étapes échoue, le processus s'arrête immédiatement. S'il s'agit d'une Pull request, un message d'erreur apparaît, empéchant de poursuivre celle-ci. 
 
 ![Pipeline](images/Workflow.png)
 
