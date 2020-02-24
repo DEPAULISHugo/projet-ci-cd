@@ -36,7 +36,7 @@ uses: actions/setup-java@v1
       with:
         java-version: <VERSION DE JAVA>
 ```
-Enfin, pour effectuer les tests, on utilise la commande maven `mvn -B test --file pom.xml`
+Enfin, pour effectuer les tests, on utilise la commande maven `mvn -B test --file pom.xml`. Si l'une de ces sous-étapes échoue, le pipeline s'arrête.
 
 ### Déployer
 
