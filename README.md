@@ -40,3 +40,26 @@ Enfin, pour effectuer les tests, on utilise la commande maven `mvn -B test --fil
 
 ### Déployer
 
+La troisième étape est censé produire la documentation et le projet sous forme de site statique. Dans un premier temps, on utilise la commande maven `mvn -B javadoc:javadoc --file pom.xml`. Cette commande fonctionne parfaitement en local, mais lorsqu'elle est éxécuté dans le pipeline, elle échoue et renvoie le message d'erreur suivant :
+
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-javadoc-plugin:3.1.1:javadoc (default-cli) on project project: An error has occurred in Javadoc report generation: Unable to find javadoc command: The javadoc executable '/usr/lib/jvm/zulu-8-azure-amd64/jre/bin/javadoc' doesn't exist or is not a file. Verify the <javadocExecutable/> parameter. -> [Help 1]
+
+J'ai donc commenté cette partie pour que le workflow puisse arriver à son terme.
+
+Ensuite, on exécute la commande `mvn -B clean verify --file pom.xml` pour produire le .jar du projet, déployable sur un serveur d'application.
+
+Ensuite, on upload le .jar produit pour pouvoir le réutiliser dans une future étape grâce aux commandes suivantes : 
+```
+    - name: Upload Maven build artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: artifact
+        path: target/project-0.0.1-SNAPSHOT.jar
+```
+
+On pourrait par exemple mettre en place un déploiement continu en ajoutant une étape qui téléchargerait le .jar et le déploierait sur un serveur d'application.
+
+
+
+
+
