@@ -53,5 +53,5 @@ jobs:
       with:
         java-version: 1.8
     - name: Deploy Javadoc
-      run: mvn -f github-actions-java-maven/pom.xml javadoc:javadoc
+      run: bash mvn -B javadoc:javadoc --file pom.xml
 
