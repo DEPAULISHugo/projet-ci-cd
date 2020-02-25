@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: Checks-out the repository under $GITHUB_WORKSPACE
       uses: actions/checkout@v1
-    - name: Build with Maven
+    - name: Compile with Maven
       run: mvn -B compile --file pom.xml
   
   Tester_J8:
@@ -53,5 +53,12 @@ jobs:
       with:
         java-version: 1.8
     - name: Deploy Javadoc
-      run: bash mvn -B javadoc:javadoc --file pom.xml
+      #run: mvn -B javadoc:javadoc --file pom.xml
+    - name: Build with maven
+      run: mvn -B clean verify --file pom.xml
+    - name: Upload Maven build artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: artifact
+        path: target/project-0.0.1-SNAPSHOT.jar
 
