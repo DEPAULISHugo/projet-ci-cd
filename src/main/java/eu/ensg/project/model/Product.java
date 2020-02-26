@@ -28,6 +28,7 @@ public class Product {
         this.nom=nom;
         this.prix=prix;
 	int a = 35 + 10;
+	int b = 12;
     }
     
     /**
