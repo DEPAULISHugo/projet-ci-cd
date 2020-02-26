@@ -59,6 +59,21 @@ Ensuite, on upload le .jar produit pour pouvoir le réutiliser dans une future �
 
 On pourrait par exemple mettre en place un déploiement continu en ajoutant une étape qui téléchargerait le .jar et le déploierait sur un serveur d'application.
 
+## Tests validant le pipeline
+
+Pour valider mon pipeline, j'ai effectué plusieurs tests en créant des pull requests avec différents scénarios. Pour cela, j'ai utilisé la branche test_pull_request.
+
+### Pull request valide
+
+Dans un premier temps, j'ai effectué une pull request avec une branche valide. J'ai ainsi pu vérifier que le pipeline effectuait bien toutes les étapes prévues.
+
+### Pull request avec une branche non compilable
+
+Dans un second temps, j'ai effectué une pull request avec une branche qui ne pouvait compiler. Comme prévu, le pipeline a stoppé à la première étape car Maven a signalé que le code n'était pas compilable.
+
+### Pull request avec une branche ne validant pas les tests
+
+Enfin, j'ai effectué une pull request avec une branche ne validant pas les tests. Le pipeline a passé la première étape sans problème, mais a stoppé à la seconde étape, car les test sur les deux versions de Java ont échoués (l'échec d'une seule version aurait suffit pour stopper le pipeline).
 
 
 
