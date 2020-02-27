@@ -26,7 +26,7 @@ public class Product {
     public Product(int id, String nom, int prix) {
         this.id=id;
         this.nom=nom;
-        this.prix=prix;
+        this.prix=prix+1;
     }
     
     /**
