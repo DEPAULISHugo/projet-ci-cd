@@ -2,6 +2,7 @@
 
 Ce projet est un TP visant à mettre en pratique mes connaissances théoriques et pratiques en CI/CD. L’objetif est de mettre en oeuvre la livraison continue d'un projet Java Spring Boot.
 
+
 ## Application
 
 Le projet servant d'exemple est une application Spring Boot. Elle met en place un microservice pouvant servir à un commerce.
