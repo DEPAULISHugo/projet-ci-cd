@@ -13,6 +13,7 @@ public class ProductTest {
 	@Test
 	public void testGetId() {
 		assertEquals(4, product.getId());
+		assertEquals(4,5);
 	}
 	
 	@Test
